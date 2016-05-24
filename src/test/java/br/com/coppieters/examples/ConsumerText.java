@@ -72,6 +72,7 @@ public class ConsumerText {
 		}
 	}
 
+	
 	@Test
 	public void consomeMensagemQueue() {
 		QueueSession sessao = null;
