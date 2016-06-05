@@ -1,4 +1,4 @@
-package br.com.coppieters.examples;
+package br.com.coppieters.examples.utils;
 
 import java.util.function.Consumer;
 

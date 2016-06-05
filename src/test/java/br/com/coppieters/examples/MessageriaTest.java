@@ -9,6 +9,8 @@ import org.junit.Before;
 public class MessageriaTest {
 
 	protected final String FILA_NOME = "financeiro";
+	protected final String TOPICO_NOME = "loja";
+	
 	protected InitialContext contexto = null;
 
 	@Before

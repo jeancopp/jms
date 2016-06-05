@@ -1,26 +1,19 @@
-package br.com.coppieters.examples;
+package br.com.coppieters.examples.queue;
 
 import javax.jms.TextMessage;
-import javax.naming.NamingException;
 
 import org.junit.Test;
+
+import br.com.coppieters.examples.MessageriaDefaultTest;
 /**
  * Teste de messageria usando MessageListener
  * @author Jean
- *
  */
-public class MessageriaListenerTest extends MessageriaTest{
+public class MessageriaListenerTest extends MessageriaDefaultTest{
 	
-	private ManipulaJMS consumerJMS;
-	@Override
-	public void init() throws NamingException {
-		super.init();
-		this.consumerJMS = new ManipulaJMS(this.contexto);
-	}
-
 	@Test
 	public void consumirMensagemComMessageListenerPadrao() {
-		consumerJMS.accept(sessao -> {
+		executarAcaoAposCriarSessao( sessao -> {
 			try {
 				sessao.setMessageListener( System.out::println );
 			} catch (Exception e) {
@@ -30,7 +23,7 @@ public class MessageriaListenerTest extends MessageriaTest{
 	}
 	@Test
 	public void consumirMensagemComMessageListenerText() {
-		consumerJMS.accept(sessao -> {
+		executarAcaoAposCriarSessao( sessao -> {
 			try {
 				sessao.setMessageListener( mensagem -> {
 					TextMessage textMessage = (TextMessage) mensagem;

@@ -1,4 +1,4 @@
-package br.com.coppieters.examples;
+package br.com.coppieters.examples.queue;
 
 import javax.jms.Message;
 import javax.jms.Queue;
@@ -10,7 +10,9 @@ import javax.jms.Session;
 
 import org.junit.Test;
 
-public class MessageriaConsumerQueueTest extends MessageriaTest {
+import br.com.coppieters.examples.MessageriaTest;
+
+public class MessageriaConsumerQueueObjectsTest extends MessageriaTest {
 	
 	@Test
 	public void consomeMensagemQueue() {

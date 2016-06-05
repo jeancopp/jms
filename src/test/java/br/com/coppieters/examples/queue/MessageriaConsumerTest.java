@@ -1,4 +1,4 @@
-package br.com.coppieters.examples;
+package br.com.coppieters.examples.queue;
 
 import javax.jms.Destination;
 import javax.jms.Message;
@@ -6,11 +6,13 @@ import javax.jms.MessageConsumer;
 
 import org.junit.Test;
 
-public class MessageriaConsumerTest extends MessageriaTest{
+import br.com.coppieters.examples.MessageriaDefaultTest;
+
+public class MessageriaConsumerTest extends MessageriaDefaultTest{
 	
 	@Test
 	public void consumirMensagem() {
-		new ManipulaJMS(this.contexto).accept(sessao -> {
+		this.executarAcaoAposCriarSessao( sessao -> {
 			try {
 				Destination fila = (Destination) contexto.lookup(FILA_NOME);// <--- nome da fila no arquivo  de configuração(main/resoureces/jndi.properties)
 				MessageConsumer consumidorDeMensagem;
